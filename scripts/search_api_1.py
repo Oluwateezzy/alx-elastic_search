@@ -50,9 +50,13 @@ print(res["hits"]["hits"][0]["_source"])
 
 
 res = es.search(index="test_index_2", body={"query": {"match_all": {}}})
+print(res["hits"]["total"]["value"])
 
-print(res.body)
+res = es.search(index="test_index_1,test_index_2", body={"query": {"match_all": {}}})
+print(res["hits"]["total"]["value"])
 
+res = es.search(index="test_index_*", body={"query": {"match_all": {}}})
+print(res["hits"]["total"]["value"])
 
-res = es.search(index="test_index_1, test_index_2", body={"query": {"match_all": {}}})
-print(res)
+res = es.search(index="_all", body={"query": {"match_all": {}}})
+print(res["hits"]["total"]["value"])
