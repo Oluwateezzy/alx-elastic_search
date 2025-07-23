@@ -18,6 +18,6 @@ es.indices.create(
 
 doc = {"email_body": "This is a sample email body text for testing purposes."}
 
-response = es.index(index="object_index", body=doc)
+response = es.index(index="text_index", body=doc)
 
 print(response)
