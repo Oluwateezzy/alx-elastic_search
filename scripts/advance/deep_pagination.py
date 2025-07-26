@@ -1,8 +1,6 @@
 from datetime import datetime, timedelta
-import pprint
 import random
 from elasticsearch import Elasticsearch
-import tqdm
 
 
 es = Elasticsearch("http://localhost:9200", basic_auth=("elastic", "4CMkmoDx"))
